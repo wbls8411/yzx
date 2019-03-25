@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active:
+    - wocao
+---
+server:
+  port: 8001
+spring:
+  application:
+    name: USER-PROVIDER #不要使用下划线
+  profiles: wocao
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
+---
+server:
+  port: 8001
+spring:
+  application:
+    name: USER-PROVIDER #不要使用下划线
+  profiles: nimei
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:7001/eureka #告诉服务提供者要把服务注册到哪儿，注册中心的地址
